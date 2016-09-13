@@ -16,7 +16,9 @@ var spec = function (name) {
     if (fileNameSearch) {
       filename = fileNameSearch[1];
     }
-    var subdirSearch = path.match(/spec\\([a-zA-Z0-9\\]+)\\\w+\.spec\.js$/);
+    var subdirSearch = path
+     .replace(/\//g, "\\")
+     .match(/spec\\([a-zA-Z0-9\\]+)\\\w+\.spec\.js$/);
     if (subdirSearch) {
       subdir = subdirSearch[1];
     }
